@@ -6,14 +6,14 @@
 
     <x-form action="{{ route('register') }}">
 
-        <x-form.input type="text" label='Name' name="name">{{ old('name') }}</x-form.input>
+        <x-form.input type="text" label="{{ __('Name') }}" name="name">{{ old('name') }}</x-form.input>
         <x-form.input type="text" label='Email' name="email">{{ old('email') }}</x-form.input>
-        <x-form.input type="password" label='Password' name='password'></x-form.input>
-        <x-form.input type="password" label='Confirm Password' name='confirmPassword'></x-form.input>
+        <x-form.input type="password" label="{{ __('Password') }}" name='password'></x-form.input>
+        <x-form.input type="password" label="{{ __('Confirm Password') }}" name='confirmPassword'></x-form.input>
 
-        <p>Already can an account? <a class="text-primary" href="{{ route('login') }}">Login</a></p>
+        <p>{{ __('Already can an account?') }} <a class="text-primary" href="{{ route('login') }}">{{ __('Login') }}</a></p>
 
-        <x-button>Save Password</x-button>
+        <x-button>{{ __('Save') }}</x-button>
 
     </x-form>
 

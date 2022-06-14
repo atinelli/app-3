@@ -35,10 +35,10 @@ class RegisterController extends Controller
             ],
             'confirmPassword' => 'required|same:password'
         ], [
-            'password.required'        => 'Password is required',
-            'password.uncompromised'   => 'The given new password has appeared in a data leak by https://haveibeenpwned.com please choose a different new password. ',
-            'confirmPassword.required' => 'Confirm password is required',
-            'confirmPassword.same'     => 'Confirm password and new password must match',
+            'password.required'        => 'O campo senha é obrigatório.',
+            'password.uncompromised'   => 'A nova senha fornecida apareceu em um vazamento de dados por https://haveibeenpwned.com, escolha uma nova senha diferente. ',
+            'confirmPassword.required' => 'O campo confirmar senha é obrigatório.',
+            'confirmPassword.same'     => 'O campo senha e o confirmar senha estão diferentes.',
         ]);
 
         $user = User::create([
