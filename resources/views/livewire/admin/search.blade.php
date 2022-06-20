@@ -7,7 +7,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
             </div>
-            <input wire:model.debounce.500ms="query" type="search" class="w-full py-2 rounded-md pl-10 bg-white dark:bg-gray-700 dark:text-gray-300 focus:outline-none" placeholder="Search">
+            <input wire:model.debounce.500ms="query" type="search" class="w-full py-2 rounded-md pl-10 bg-white dark:bg-gray-700 dark:text-gray-300 focus:outline-none" placeholder="{{ __('Search') }}">
         </div>
     </div>
 
@@ -21,7 +21,7 @@
             @endforeach
 
             @if (count($searchResults) === 0)
-                    <li class="p-1">No results</li>
+                    <li class="p-1">{{ __('No Results Found') }}</li>
             @endif
         </ul>
     @endif
