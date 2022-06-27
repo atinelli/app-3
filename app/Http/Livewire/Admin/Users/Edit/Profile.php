@@ -66,7 +66,7 @@ class Profile extends Base
         $this->validate();
 
         if ($this->image !== '') {
-            Storage::disk('public')->delete($this->user->image);
+            !is_null($this->user->image) && Storage::delete($this->user->image); 
 
             $token = md5(random_int(1, 10).microtime());
             $name  = $token.'.jpg';
