@@ -32,23 +32,23 @@
     <x-nav.link route="admin" icon="fas fa-home">{{ __('Dashboard') }}</x-nav.link>
 @endif
 
+@if(can('view_users'))
+    <x-nav.link route="admin.users.index" icon="fas fa-users">{{ __('Users') }}</x-nav.link>
+@endif
+
 @if(can('view_audit_trails') || can('view_sent_emails'))
     <x-nav.group label="{{ __('Settings') }}" route="admin.settings" icon="fas fa-cogs">
         @if(can('view_audit_trails'))
-            <x-nav.group-item route="admin.settings.audit-trails.index" icon="far fa-circle">{{ __('Audit Trails') }}</x-nav.group-item>
+            <x-nav.group-item route="admin.settings.audit-trails.index" icon="fas fa-list-alt">{{ __('Audit Trails') }}</x-nav.group-item>
         @endif
 
         @if(can('view_sent_emails'))
-            <x-nav.group-item route="admin.settings.sent-emails" icon="far fa-circle">{{ __('Sent Emails') }}</x-nav.group-item>
+            <x-nav.group-item route="admin.settings.sent-emails" icon="fas fa-envelope">{{ __('Sent Emails') }}</x-nav.group-item>
         @endif
 
         @if(is_admin())
-            <x-nav.group-item route="admin.settings" icon="far fa-circle">{{ __('System') }}</x-nav.group-item>
-            <x-nav.group-item route="admin.settings.roles.index" icon="far fa-circle">{{ __('Roles') }}</x-nav.group-item>
+            <x-nav.group-item route="admin.settings" icon="fas fa-cog">{{ __('System') }}</x-nav.group-item>
+            <x-nav.group-item route="admin.settings.roles.index" icon="fas fa-shield">{{ __('Roles') }}</x-nav.group-item>
         @endif
     </x-nav.group>
-@endif
-
-@if(can('view_users'))
-    <x-nav.link route="admin.users.index" icon="fas fa-users">{{ __('Users') }}</x-nav.link>
 @endif
