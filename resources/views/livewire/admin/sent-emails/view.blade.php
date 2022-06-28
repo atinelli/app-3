@@ -49,8 +49,8 @@
         <div class="flex items-center justify-between">
             <p class="text-lg font-semibold">
                 <span class="text-gray-900 text-sm">
-                    From: {{ $emailKeys->from }}<br>
-                    To: {{ $emailKeys->to }}<br>
+                {{ __('From:') }} {{ $emailKeys->from }}<br>
+                {{ __('To:') }} {{ $emailKeys->to }}<br>
                     @if ($emailKeys->cc !='')CC: {{ $emailKeys->cc }}<br>@endif
                     @if ($emailKeys->bcc !='')BCC: {{ $emailKeys->bcc }}<br>@endif
                 </span>

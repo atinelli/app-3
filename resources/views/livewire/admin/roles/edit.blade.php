@@ -1,8 +1,8 @@
 @section('title', 'Edit Role')
 <div>
     <div class="mb-5">
-        <a href="{{ route('admin.settings.roles.index') }}">Roles</a>
-        <span class="dark:text-gray-200">- Edit Role</span>
+        <a href="{{ route('admin.settings.roles.index') }}">{{ __('Roles') }}</a>
+        <span class="dark:text-gray-200">- {{ __('Edit Role') }}</span>
     </div>
 
 
@@ -17,9 +17,9 @@
 
             <div class="md:w-1/2">
                 @if ($role?->label == 'Admin')
-                    <x-form.input wire:model="label" label='Role' name='label' disabled></x-form.input>
+                    <x-form.input wire:model="label" label="{{ __('Role') }}" name='label' disabled></x-form.input>
                 @else
-                    <x-form.input wire:model="label" label='Role' name='label' required></x-form.input>
+                    <x-form.input wire:model="label" label="{{ __('Role') }}" name='label' required></x-form.input>
                 @endif
             </div>
 
@@ -33,8 +33,8 @@
                         <table>
                             <thead>
                             <tr>
-                                <th class="dark:text-gray-300">Permission</th>
-                                <th class="dark:text-gray-300">Action</th>
+                                <th class="dark:text-gray-300">{{ __('Permission') }}</th>
+                                <th class="dark:text-gray-300">{{ __('Action') }}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -51,7 +51,7 @@
 
         @endif
 
-        <x-form.submit>Update Role</x-form.submit>
+        <x-form.submit>{{ __('Update Role') }}</x-form.submit>
 
     </x-form>
 

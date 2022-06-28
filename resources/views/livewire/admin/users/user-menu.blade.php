@@ -17,19 +17,18 @@
             <div class="relative z-30 rounded-b-md bg-white border border-gray-100 dark:bg-gray-700 shadow-xs">
 
                 @if (can('view_users_profiles'))
-                    <x-dropdown-link :href="route('admin.users.show', ['user' => user()->id])">View Profile</x-dropdown-link>
+                    <x-dropdown-link :href="route('admin.users.show', ['user' => user()->id])">{{ __('View Profile') }}</x-dropdown-link>
                 @endif
 
                 @if (can('edit_own_account'))
-                    <x-dropdown-link :href="route('admin.users.edit', ['user' => user()->id])">Edit Account</x-dropdown-link>
+                    <x-dropdown-link :href="route('admin.users.edit', ['user' => user()->id])">{{ __('Edit Account') }}</x-dropdown-link>
                 @endif
 
                 <hr>
 
                 <a href="{{ route('logout') }}"
                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                   class="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-400">Log
-                    out</a>
+                   class="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-400">{{ __('Logout') }}</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="post">
                     {{ csrf_field() }}
                 </form>

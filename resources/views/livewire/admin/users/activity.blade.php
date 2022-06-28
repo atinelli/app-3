@@ -1,11 +1,11 @@
 <div>
     <div class="card">
-        <h1>Activity</h1>
+        <h1>{{ __('Activity') }}</h1>
 
         <div class="mb-5 grid sm:grid-cols-1 md:grid-cols-3 gap-4">
 
             <div class="col-span-2">
-                <x-form.input type="search" id="title" name="title" wire:model="title" label="none" placeholder="Search Actions">
+                <x-form.input type="search" id="title" name="title" wire:model="title" label="none" placeholder="{{ __('Search Actions') }}">
                     {{ old('title', request('title')) }}
                 </x-form.input>
             </div>
@@ -21,7 +21,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                           d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                 </svg>
-                Advanced Search
+                {{ __('Advanced Search') }}
             </button>
 
             <button type="button" wire:click="resetFilters" @click="isOpen = false"
@@ -31,7 +31,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                           d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
                 </svg>
-                Reset form
+                {{ __('Reset form') }}
             </button>
 
             <div
@@ -46,21 +46,21 @@
                     wire:ignore.self>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
 
-                    <x-form.select id="section" name="section" label="Section" wire:model="section">
-                        <option value="">Select</option>
+                    <x-form.select id="section" name="section" label="{{ __('Section') }}" wire:model="section">
+                        <option value="">{{ __('Select') }}</option>
                         @foreach($sections as $section)
                             <option value="{{ $section }}">{{ $section }}</option>
                         @endforeach
                     </x-form.select>
 
-                    <x-form.select id="type" name="type" label="Type" wire:model="type">
-                        <option value="">Select</option>
+                    <x-form.select id="type" name="type" label="{{ __('Type') }}" wire:model="type">
+                        <option value="">{{ __('Select') }}</option>
                         @foreach($types as $type)
                             <option value="{{ $type }}">{{ $type }}</option>
                         @endforeach
                     </x-form.select>
 
-                    <x-form.daterange id="created_at" name="created_at" label="Created Date Range" wire:model.lazy="created_at">
+                    <x-form.daterange id="created_at" name="created_at" label="{{ __('Created Date Range') }}" wire:model.lazy="created_at">
                         {{ old('created_at', request('created_at')) }}
                     </x-form.daterange>
 
@@ -73,11 +73,11 @@
             <table>
                 <thead>
                 <tr>
-                    <th><a href="#" wire:click.prevent="sortBy('title')">Action</a></th>
-                    <th><a href="#" wire:click.prevent="sortBy('section')">Section</a></th>
-                    <th><a href="#" wire:click.prevent="sortBy('type')">Type</a></th>
-                    <th><a href="#" wire:click.prevent="sortBy('link')">View</a></th>
-                    <th><a href="#" wire:click.prevent="sortBy('created_at')">Created At</a></th>
+                    <th><a href="#" wire:click.prevent="sortBy('title')">{{ __('Action') }}</a></th>
+                    <th><a href="#" wire:click.prevent="sortBy('section')">{{ __('Section') }}</a></th>
+                    <th><a href="#" wire:click.prevent="sortBy('type')">{{ __('Type') }}</a></th>
+                    <th><a href="#" wire:click.prevent="sortBy('link')">{{ __('View') }}</a></th>
+                    <th><a href="#" wire:click.prevent="sortBy('created_at')">{{ __('Created at') }}</a></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -88,7 +88,7 @@
                         <td>{{ $log->type }}</td>
                         <td>
                             @if ($log->link !== null)
-                                <a href="{{ url($log->link) }}">View</a>
+                                <a href="{{ url($log->link) }}">{{ __('View') }}</a>
                             @endif
                         </td>
                         <td>{{ $log->created_at !=='' ? date('jS M Y H:i:s', strtotime($log->created_at)) : '' }}</td>

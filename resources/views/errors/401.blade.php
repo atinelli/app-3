@@ -1,7 +1,7 @@
 <x-app-layout>
 @section('title', '401')
 
-<h3>401 - You do not have the correct permissions.</h3>
+<h3>401 - {{ __('You do not have the correct permissions.') }}</h3>
 
 @include('errors.messages')
 

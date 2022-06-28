@@ -7,7 +7,7 @@
     <x-form action="{{ route('register') }}">
 
         <x-form.input type="text" label="{{ __('Name') }}" name="name">{{ old('name') }}</x-form.input>
-        <x-form.input type="text" label='Email' name="email">{{ old('email') }}</x-form.input>
+        <x-form.input type="text" label="{{ __('Email') }}" name="email">{{ old('email') }}</x-form.input>
         <x-form.input type="password" label="{{ __('Password') }}" name='password'></x-form.input>
         <x-form.input type="password" label="{{ __('Confirm Password') }}" name='confirmPassword'></x-form.input>
 

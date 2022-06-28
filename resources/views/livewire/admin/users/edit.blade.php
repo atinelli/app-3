@@ -1,8 +1,8 @@
 @section('title', 'Edit')
 <div>
     <div class="mb-5">
-       <a href="{{ route('admin.users.index') }}">Users</a>
-        <span class="dark:text-gray-200">- Edit User</span>
+       <a href="{{ route('admin.users.index') }}">{{ __('Users') }}</a>
+        <span class="dark:text-gray-200">- {{ __('Edit User') }}</span>
    </div>
 
     <livewire:admin.users.edit.profile :user="$user"/>

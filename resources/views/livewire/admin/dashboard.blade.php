@@ -1,6 +1,6 @@
 @section('title', 'Dashboard')
 
-<h1>Dashboard</h1>
+<h1>{{ __('Dashboard') }}</h1>
 
 <div class="card">
     <p><b>Laravel AdminTW</b> is a free theme</p>
