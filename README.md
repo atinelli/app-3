@@ -10,7 +10,7 @@ Consulte **Implantação** para saber como implantar o projeto.
 
 ### 📋 Pré-requisitos
 
-De que coisas você precisa para instalar o software e como instalá-lo?
+De que coisas você precisa para instalar?
 
 ```
 PHP 8.0
@@ -21,13 +21,13 @@ Laravel 9.0
 
 Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
 
-Diga como essa etapa será:
+Atualizar o composer:
 
 ```
 composer update
 ```
 
-E repita:
+Observação:
 
 ```
 Certifique-se de ter atualizado .env antes de migrar.
